@@ -1,0 +1,5 @@
+package com.springBootDataJPADemo.model;
+
+public class Alien {
+
+}

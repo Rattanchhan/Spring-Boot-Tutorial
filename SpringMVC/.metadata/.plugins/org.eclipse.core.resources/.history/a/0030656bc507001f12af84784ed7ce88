@@ -1,0 +1,5 @@
+package com.springMVCDemo.model;
+
+public class Alien {
+
+}

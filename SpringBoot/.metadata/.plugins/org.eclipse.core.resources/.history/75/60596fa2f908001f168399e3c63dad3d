@@ -1,0 +1,5 @@
+package com.springBootDataJPADemo.controller;
+
+public class HomeController {
+
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v10.1 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v10.1 Server at localhost" name="Tomcat v10.1 Server at localhost" runtime-id="Apache Tomcat v10.1" server-type="org.eclipse.jst.server.tomcat.101" server-type-id="org.eclipse.jst.server.tomcat.101" start-timeout="60" stop-timeout="15" testEnvironment="true" timestamp="1">
+    <list key="modules" value0="LoginModule::org.eclipse.jst.jee.server:LoginModule::jst.web::5.0" value1="ServletDemoApp::org.eclipse.jst.jee.server:ServletDemoApp::jst.web::5.0" value2="FileUploadServlet::org.eclipse.jst.jee.server:FileUploadServlet::jst.web::6.0" value3="JSTLDemo::org.eclipse.jst.jee.server:JSTLDemo::jst.web::5.0" value4="ServletFilter::org.eclipse.jst.jee.server:ServletFilter::jst.web::5.0"/>
+  </server>
+</servers>

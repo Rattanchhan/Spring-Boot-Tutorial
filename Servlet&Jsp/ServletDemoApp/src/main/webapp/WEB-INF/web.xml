@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>ServletDemoApp</display-name>
+  <servlet>
+  	<servlet-name>servletDemo</servlet-name>
+  	<servlet-class>com.servletDemo.MyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>servletDemo</servlet-name>
+  	<url-pattern>/DemoServlet</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  	<param-name>name</param-name>
+  	<param-value>Kunthea</param-value>
+  </context-param>
+   <servlet>
+  	<servlet-name>secondServletDemo</servlet-name>
+  	<servlet-class>com.servletDemo.SecondServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>secondServletDemo</servlet-name>
+  	<url-pattern>/SecondServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>servletContext</servlet-name>
+  	<servlet-class>com.servletDemo.ServletContext</servlet-class>
+  	<init-param>
+  		<param-name>name</param-name>
+  		<param-value>Ratana</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>servletContext</servlet-name>
+  	<url-pattern>/ServletContext</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>servletJspDemo</servlet-name>
+  	<servlet-class>com.servletDemo.servletJsp.ServletJSP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>servletJspDemo</servlet-name>
+  	<url-pattern>/DemoServletJSP</url-pattern>
+  </servlet-mapping>
+</web-app>

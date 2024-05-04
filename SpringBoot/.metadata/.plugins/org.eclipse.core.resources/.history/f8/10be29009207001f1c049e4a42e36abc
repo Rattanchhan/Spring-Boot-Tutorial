@@ -1,0 +1,27 @@
+package com.springBootMVCDemo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class HomeController {
+
+	@GetMapping("/")
+	private String home() {
+		return "index.html";
+	}
+	@GetMapping("/add")
+	private String result(HttpServletRequest request) {
+		int number1 = Integer.parseInt(request.getParameter("number1"));
+		int number2 = Integer.parseInt(request.getParameter("number1"));
+		
+		int result= number1+number2;
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("resut", result);
+		return "";
+	}
+}

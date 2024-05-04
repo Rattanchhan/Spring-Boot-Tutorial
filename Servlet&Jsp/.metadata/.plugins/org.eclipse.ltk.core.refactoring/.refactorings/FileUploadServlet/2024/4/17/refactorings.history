@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;FileUploadServlet&apos;&#x0D;&#x0A;- Original project: &apos;FileUploadServlet&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     commons-fileupload-1.5.jar&#x0D;&#x0A;     commons-io-2.16.1.jar" description="Delete elements" element1="src/main/webapp/WEB-INF/lib/commons-fileupload-1.5.jar" element2="src/main/webapp/WEB-INF/lib/commons-io-2.16.1.jar" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="2" stamp="1713967472151" subPackages="false" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package com.springMVCDemo;
+
+public class App {
+	public static void Main() {
+		System.out.println("Hello world");
+	}
+}

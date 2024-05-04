@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="https://www.springframework.org/schema/beans" 
+	xmlns:context="https://www.springframework.org/schema/context" 
+	xmlns:tx="https://www.springframework.org/schema/tx" 
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	https://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd
+	https://www.springframework.org/schema/context
+	https://www.springframework.org/schema/context/spring-context.xsd
+	https://www.springframework.org/schema/tx
+	https://www.springframework.org/schema/tx/spring-tx.xsd">
+    
+    <context:component-scan base-package="com.springMVCDemo"></context:component-scan>
+    <context:annotation-config></context:annotation-config>
+    <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	    <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
+	    <property name="url" value="jdbc:hsqldb:hsql://localhost:9001"/>
+	    <property name="username" value="sa"/>
+	    <property name="password" value=""/>
+  	</bean>
+
+  	<bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	    <property name="dataSource" ref="myDataSource"/>
+	    <property name="hibernateProperties">
+	      <value>
+	        hibernate.dialect=org.hibernate.dialect.HSQLDialect
+	      </value>
+	    </property>
+  	</bean>
+  	
+  	<bean id="myProductDao" class="product.ProductDaoImpl">
+    	<property name="sessionFactory" ref="mySessionFactory"/>
+  	</bean>
+
+	<tx:annotation-driven transaction-manager="myTransactionManager"></tx:annotation-driven>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+</beans>

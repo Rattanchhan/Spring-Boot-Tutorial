@@ -1,0 +1,49 @@
+package com.springMVCDemo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.springMVCDemo.dao.AlienDao;
+import com.springMVCDemo.model.Alien;
+
+@Controller
+public class HomeController {
+	@Autowired
+	AlienDao alienDao;
+	@ModelAttribute
+	public void modelData(ModelMap modelMap) {
+		modelMap.addAttribute("name","ratana");
+	}
+	@GetMapping("/")
+	public String home() {
+		return "index";
+	}
+//	@RequestMapping(value="/getAlien",method=RequestMethod.POST)
+//	/* @PostMapping(value="/getAlien") */
+//	private String result(ModelMap modelMap) 
+//	{ 
+//		modelMap.addAttribute("alien",alienDao.getAliens());
+//		return "result";
+//		
+//	}
+	
+	@GetMapping("/addAlien")
+	@ResponseBody
+	private String addAlien(@RequestParam("aid") int aid,@RequestParam("aname") String aname) {
+		Alien alien = new Alien();
+		alien.setId(aid);
+		alien.setName(aname);
+		alienDao.save(alien);
+		System.out.println(aid);
+		return "hello";
+	}
+}

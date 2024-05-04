@@ -1,0 +1,5 @@
+package com.springBootDataJPADemo.dao;
+
+public class AlienDao {
+
+}

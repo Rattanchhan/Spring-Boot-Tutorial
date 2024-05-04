@@ -1,0 +1,32 @@
+package com.springBootJDBCDemo.repo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.springBootJDBCDemo.model.Alien;
+
+@Repository
+public class AlienRepo {
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
+	}
+
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
+	public void saveAlien(Alien alien) {
+		String query = "insert into alien (id,name,tech) values(?,?,?)";
+		int row=jdbcTemplate.update(query,alien.getaId(),alien.getaName(),alien.getTech());
+		System.out.println(row);
+	}
+	public List<Alien> findAllAlien(){
+		return new ArrayList<Alien>();
+	}
+}

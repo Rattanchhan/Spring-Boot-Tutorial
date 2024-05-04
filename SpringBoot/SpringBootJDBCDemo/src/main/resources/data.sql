@@ -1,0 +1,1 @@
+insert into alien(id,name,tech) values(222,'Kunthear','QA'),(333,'Reaksa','Law');

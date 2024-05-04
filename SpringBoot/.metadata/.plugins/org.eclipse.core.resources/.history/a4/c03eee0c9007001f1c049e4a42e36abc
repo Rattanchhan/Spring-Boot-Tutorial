@@ -1,0 +1,6 @@
+package com.springBootMVCDemo.controller;
+
+@HomeController
+public class HomeController {
+
+}

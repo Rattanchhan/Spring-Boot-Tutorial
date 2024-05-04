@@ -1,0 +1,21 @@
+package com.springBootJDBCDemo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.springBootJDBCDemo.model.Alien;
+
+@SpringBootApplication
+public class SpringBootJdbcDemoApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context=	SpringApplication.run(SpringBootJdbcDemoApplication.class, args);
+		Alien alien = context.getBean(Alien.class);
+		
+		alien.setaId(111);
+		alien.setaName("ratana");
+		alien.setTech("spring");
+	}
+
+}

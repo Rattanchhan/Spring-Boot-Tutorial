@@ -1,0 +1,19 @@
+package com.springMVCDemo.dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.springMVCDemo.model.Alien;
+
+public class AlienDao {
+	@Autowired
+	private SessionFactory mysessionFactory;
+	public List<Alien> getAliens(){
+		Session session=mysessionFactory.getCurrentSession();
+		List<Alien> aliens = session.createQuery("from alien",Alien.class).list();
+		return aliens;
+	}
+}

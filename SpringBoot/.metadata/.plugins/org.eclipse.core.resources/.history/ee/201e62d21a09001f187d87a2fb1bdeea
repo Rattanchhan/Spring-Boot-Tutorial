@@ -1,0 +1,7 @@
+spring.application.name=SpringBootDataJPA
+
+spring.mvc.view.prefix=/views/
+spring.mvc.view.suffix=.jsp
+spring.datasource.url=jdbc:mysql://localhost:3306/alien
+spring.datasource.username=root
+spring.datasource.password=K@unthea@04@
